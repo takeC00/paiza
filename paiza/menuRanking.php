@@ -5,7 +5,6 @@
 		// [(0)=>"12", (1)=>"9000"]
     $array = explode(' ', $input_line, 2);
 
-    $items = intval($array[0]);
     $max_calory = intval($array[1]);
 
 		//$total_rankingの配列の中身に1〜10入ってれば"Yes"
