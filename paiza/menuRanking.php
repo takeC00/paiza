@@ -42,4 +42,5 @@
     else{
             echo count($total_ranking)-1;
         }
+		//試せるテスト結果通るが、提出するとえらー。。
 ?>
