@@ -10,3 +10,7 @@ https://paiza.jp/challenges/177/show
 各配列ごとに計算
 さあ以後に合計値返す
 
+C075:ポイント払い
+https://paiza.jp/challenges/359/show
+乗り換え回数繰り返し
+運賃とポイントで分岐し支払い方法かえる
