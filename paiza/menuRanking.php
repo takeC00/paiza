@@ -1,45 +1,92 @@
 <?php
-    // "12 9000"
+    // 自分の得意な言語で
+    // Let's チャレンジ！！
     $input_line = fgets(STDIN);
-
-		// [(0)=>"12", (1)=>"9000"]
     $array = explode(' ', $input_line, 2);
 
-    $max_calory = intval($array[1]);
+    $items = intval($array[0]);
+    //var_dump('$items='.$items);
 
-		//$total_rankingの配列の中身に1〜10入ってれば"Yes"
-		//カロリー合計が最大カロリー以下の間繰り返し注文
-    $total_ranking = [];
+    $max_calory = intval($array[1]);
+    //var_dump('$max_calory='.$max_calory);
+
+    $ranking_array = [];
     $total_calory = 0;
 
-    while($total_calory <= $max_calory){
+    $menu_count = 0;
 
-				//[(0)=>ランキング, (1)=>カロリー]
+    for($total_calory=0; $total_calory<$max_calory; $total_calory+=$menu_calory)
+    {
+
         $input_line = fgets(STDIN);
-        $item_array = explode(' ', $input_line, 2);
+        $menu = explode(' ', $input_line, 2);
+        $menu_ranking = $menu[0];
+        //var_dump($menu_ranking);
+        $menu_calory = $menu[1];
+        //var_dump($menu_calory);
 
-        $ranking = intval($item_array[0]);
-        $calory = intval($item_array[1]);
+        if($total_calory+$menu_calory >$max_calory)
+        {
+            //食べたメニューの中でランキングTOP10までのメニュー数出力
+            if(in_array('1',$ranking_array))
+            {
+                $menu_count ++;
+            }
+            if(in_array('2',$ranking_array))
+            {
+                $menu_count ++;
+            }
+            if(in_array('3',$ranking_array))
+            {
+                $menu_count ++;
+            }
+            if(in_array('4',$ranking_array))
+            {
+                $menu_count ++;
+            }
+            if(in_array('5',$ranking_array))
+            {
+                $menu_count ++;
+            }
+            if(in_array('6',$ranking_array))
+            {
+                $menu_count ++;
+            }
+            if(in_array('7',$ranking_array))
+            {
+                $menu_count ++;
+            }
+            if(in_array('8',$ranking_array))
+            {
+                $menu_count ++;
+            }
+            if(in_array('9',$ranking_array))
+            {
+                $menu_count ++;
+            }
+            if(in_array('10',$ranking_array))
+            {
+                $menu_count ++;
+            }
+            echo $menu_count;
+            break;
+        }
 
-        array_push($total_ranking, $ranking);
-        $total_calory += $calory;
-    }
-    if(in_array(1, $total_ranking)&&
-        in_array(2, $total_ranking)&&
-        in_array(3, $total_ranking)&&
-        in_array(4, $total_ranking)&&
-        in_array(5, $total_ranking)&&
-        in_array(6, $total_ranking)&&
-        in_array(7, $total_ranking)&&
-        in_array(8, $total_ranking)&&
-        in_array(9, $total_ranking)&&
-        in_array(10, $total_ranking))
+        array_push($ranking_array, $menu_ranking);
+
+        if(in_array('1', $ranking_array, true)&&
+            in_array('2', $ranking_array, true)&&
+            in_array('3', $ranking_array, true)&&
+            in_array('4', $ranking_array, true)&&
+            in_array('5', $ranking_array, true)&&
+            in_array('6', $ranking_array, true)&&
+            in_array('7', $ranking_array, true)&&
+            in_array('8', $ranking_array, true)&&
+            in_array('9', $ranking_array, true)&&
+            in_array('10', $ranking_array, true))
         {
             echo 'Yes';
-            return;
+            break;
         }
-    else{
-            echo count($total_ranking)-1;
-        }
-		//試せるテスト結果通るが、提出するとえらー。。
+    }
 ?>
