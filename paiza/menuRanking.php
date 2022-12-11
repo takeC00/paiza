@@ -89,4 +89,29 @@
             break;
         }
     }
+
+		//北島さんver
+    $str = fgets(STDIN);
+    $arr = explode(' ', $str, 2);
+
+    $N = $arr[0];
+    $C = $arr[1];
+
+    $ate_calory = 0;
+    $cnt = 0;
+
+
+    while($ate_calory <= $C){
+        $str = fgets(STDIN);
+        $arr = explode(' ', $str, 2);
+        $n = $arr[0];
+        $c = $arr[1];
+
+        $ate_calory += $c;
+        if (1 <= $n && $n <= 10) {
+            $cnt++;
+        }
+    }
+
+    echo ($cnt == 10 ? "Yes" : $cnt) . "\n";
 ?>
