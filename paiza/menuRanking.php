@@ -15,7 +15,7 @@
 
     $menu_count = 0;
 
-    for($total_calory=0; $total_calory<$max_calory; $total_calory+=$menu_calory)
+    for($total_calory=0; $total_calory<=$max_calory; $total_calory+=$menu_calory)
     {
 
         $input_line = fgets(STDIN);
