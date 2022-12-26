@@ -2,7 +2,7 @@
     $input_line = fgets(STDIN);
     $input_line = explode(' ', $input_line);
     $boxCount = $input_line[0];
-    $bollSize = $input_line[1];
+    $bollSize = $input_line[1]*2;
     $canInto = [];
 
     for($i=1; $i<=$boxCount; $i++){
